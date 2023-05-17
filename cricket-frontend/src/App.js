@@ -1,4 +1,4 @@
-import { ColorModeContext,useMode } from "./theme";
+import { ColorModeContext,useMode } from "../src/Style/theme";
 import { CssBaseline,ThemeProvider } from "@mui/material";
 import TopBar from "./scenes/global/topBar";
 function App() {
@@ -14,9 +14,9 @@ function App() {
             </main>
           </div>
       </ThemeProvider>
-
     </ColorModeContext.Provider>  
   );
 }
-
 export default App;
+
+

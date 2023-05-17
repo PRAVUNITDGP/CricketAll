@@ -1,18 +1,19 @@
 import {Box , IconButton , Typography, useTheme,Link,Tooltip} from "@mui/material";
 import { useContext } from "react";
-import { ColorModeContext, tokens } from "../../Style/theme"
+import { ColorModeContext, tokens } from "../../../styles/theme"
 import InputBase from "@mui/material";
 import HomeIcon from '@mui/icons-material/Home';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import  LoginOutlined  from "@mui/icons-material/LoginOutlined";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import NotificationsOutlinedIcon from '@mui/icons-material/NotificationsOutlined';
 
-const TopBar = () => {
+const Header = () => {
     const theme = useTheme();
-    const colors = tokens(theme.palette.mode)
-    const colorMode = useContext(ColorModeContext)
+    const colors = tokens(theme.palette.mode);
+    const colorMode = useContext(ColorModeContext);
     return (
         <Box display="flex" justifyContent = "space-between" p={2} color = "inherit">
             
@@ -45,13 +46,14 @@ const TopBar = () => {
                     <HomeIcon/> 
                     </IconButton>
                 </Tooltip>
-                
-                <IconButton>
-                    <NotificationsOutlinedIcon/>
-                </IconButton>
-                <Tooltip title="Log Out">
+                <Tooltip title="Notifications">
+                    <IconButton >
+                        <NotificationsOutlinedIcon />
+                    </IconButton>
+                </Tooltip>
+                <Tooltip title="Log In">
                     <IconButton>
-                        <LogoutOutlinedIcon/>
+                        <LoginOutlined/>
                     </IconButton>
                 </Tooltip>
             </Box>
@@ -60,4 +62,4 @@ const TopBar = () => {
     )
 }
 
-export default TopBar ;
+export default Header ;
